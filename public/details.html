@@ -1,0 +1,76 @@
+<!-- public/success.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Booking Confirmation</title>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f8ff;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      text-align: center;
+      color: green;
+    }
+
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+      padding: 10px;
+      text-align: center;
+      font-size: 18px;
+      border: 2px solid #ccc;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    td.label {
+      font-weight: bold;
+      width: 40%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="highlight">Application ID: <span id="appID"></span></div>
+    <h2>Booking Submitted Successfully</h2>
+    <table id="details"></table>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const table = document.getElementById("details");
+    const appID = params.get("applicationID");
+    document.getElementById("appID").textContent = appID;
+
+    params.forEach((value, key) => {
+      if (key !== "applicationID") {
+        const row = document.createElement("tr");
+        row.innerHTML = `<td class="label">${key}</td><td>${value || 'N/A'}</td>`;
+        table.appendChild(row);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #000080;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Page Heading */
+h2 {
+  color: bisque;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* Forms */
+form {
+  background-color: azure;
+  color: #000;
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  min-width: 300px;
+  max-width: 450px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Labels */
+label {
+  font-weight: 500;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+input[type="submit"],
+button {
+  background-color: #F7BD03;
+  color: #000;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover,
+button:hover {
+  background-color: #e5a902;
+}
+
+/* Result text */
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+  max-width: 400px;
+  word-wrap: break-word;
+}
+
+/* Responsive behavior */
+@media (max-width: 500px) {
+  form {
+    padding: 20px;
+  }
+}

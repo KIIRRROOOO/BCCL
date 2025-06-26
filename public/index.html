@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>BCCL HALL BOOKING SYSTEM</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <a href="admin.html">Admin Login</a>
+        <a href="check.html">Check Booking</a>
+    </div>
+    <br>
+    <div class="Form">
+        <form action="/submit/" method="post" enctype="multipart/form-data" id="myform">
+            <div class="Reg">
+                <img src="/bccl.png"><br><br>
+                <div class="form-grid">
+                <label for="Halls">Hall / Venue</label>
+                <select name="Halls" id="Halls" name="Halls" required>
+                    <option value="" selected disabled>Select Hall</option>
+                    <option value="Hall1">Hall Koyla Nagar</option>
+                    <option value="Hall2">Hall Sijua</option>
+                    <option value="Hall3">Hall Katras</option>
+                    <option value="Hall4">Hall Maithon</option>
+                    <option value="Hall5">Hall Bhuli</option>
+                </select><br><br>
+                <label for="Booking">Booking Date</label>
+                <input type="date" id="Date" name="Date" required><br><br>
+                <label for="Name">Name</label>
+                <input type="text" id="Name" name="Name" required><br><br>
+                <label for="Address">Address</label>
+                <textarea id="Address" name="Address" rows="2" required></textarea>
+                <br><br>
+                <label for="Mobile">Mobile.No</label>
+                <input type="text" id="Mobile" maxlength="10" name="Mobile" required><br>
+                <span id="MobileError" class="Error" style="display:none">Enter Valid Mobile No.</span><br>
+                <label for="Email">E-mail</label>
+                <input type="email" id="Email" name="Email" required><br>
+                <span id="EmailError" class="Error" style="display:none">Enter valid Email.</span><br>
+                <input type="checkbox" name="login" class="val" value="BCCLID" id="bccl">
+                <label for="BID">BCCL ID</label>
+                <input type="text" id="BCCLID" name="BCCLID" style="display: none;"><br>
+                <br>
+                <div class="adh">
+                    <input type="checkbox" name="login" class="val" value="Adhaar" id="adhaar">
+                    <label for="Adhaar">Adhaar No.</label>
+                    <input type="text" id="Adhaar" name="Adhaar" style="display: none;">
+                    <label for="File"></label>
+                    <input type="file" id="File1" name="File1" style="display: none;"><br>
+                </div>
+            </div>
+            <br>
+            <label for="purpose">Purpose</label>
+            <select name="Option" id="Purpose">
+                <option value="" selected disabled>Select Purpose</option>
+                <option value="Self">Self</option>
+                <option value="Dependent">Dependent</option>
+            </select>
+            <input type="text" placeholder="Purpose Detail" name="purposeDetail" required><br><br>
+            <div class="adh">
+                <label for="Adhaar Dependent" id="Dependent" class=Dependent style="display: none;">Adhaar No.</label>
+                <input type="text" id="adhaarD" class="Dependent" name="adhaarDependent" style="display: none;">
+                <label for="File"></label>
+                <input type="file" id="File2" class="Dependent" name="File2" style="display: none;"><br>
+            </div>
+            <input type="checkbox" id="declare" required>I ensure that all the details provided above are correct .<br>
+            <input type="hidden" id="ApplicationID" name="ApplicationID">
+            </div>
+            <input type="submit"></button>
+        </form>
+    </div>
+    <script src="/script.js"></script>
+</body>
+
+</html>

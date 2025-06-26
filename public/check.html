@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Check Booking Status</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="check">
+  <h2>Check Booking Status</h2>
+  
+  <form id="checkForm">
+    <label for="appID">Application ID</label>
+    <input type="text" id="appID" name="appID" required>
+    <br><br>
+    <input type="submit" value="Check">
+  </form>
+
+  <div id="result" style="margin-top: 20px; font-weight: bold;"></div>
+
+  <script>
+    document.getElementById("checkForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const appID = document.getElementById("appID").value.trim();
+
+      fetch("/check-status?applicationID=" + encodeURIComponent(appID))
+        .then(res => res.json())
+        .then(data => {
+          const resultDiv = document.getElementById("result");
+          if (data.found) {
+            if (data.status === 'Approved') {
+              resultDiv.innerHTML = `
+                <span style="color: green;"><strong>Status:</strong> Approved</span><br><br>
+                <a href="payment.html?appID=${encodeURIComponent(appID)}" style="color: blue; text-decoration: underline;">→ Proceed to Payment</a>
+              `;
+            } else {
+              resultDiv.innerHTML = `<span style="color: orange;"><strong>Status:</strong> ${data.status}</span>`;
+            }
+          } else {
+            resultDiv.innerHTML = `<span style="color:red;">Application ID not found.</span>`;
+          }
+        })
+        .catch(err => {
+          console.error(err);
+          document.getElementById("result").innerHTML = `<span style="color:red;">Error checking status.</span>`;
+        });
+    });
+  </script>
+</body>
+</html>

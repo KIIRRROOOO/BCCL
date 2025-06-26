@@ -1,0 +1,135 @@
+/* Import a modern font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+.check
+{
+    background-color: azure;
+}
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #000080;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.header {
+    background-color: #F7BD03;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    font-weight: bold;
+}
+
+.header a {
+    text-decoration: none;
+    color: #000;
+    transition: color 0.3s;
+}
+
+.header a:hover {
+    color: #444;
+}
+
+img {
+    width: 180px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: bisque;
+    text-align: center;
+}
+
+.Form, .adminform {
+    background-color: azure;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.Reg {
+    text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="file"],
+input[type="password"],
+select,
+textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 8px auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+}
+
+textarea {
+    width: 90%;
+    padding: 10px;
+    margin: 8px auto;
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    resize: vertical;
+    min-height: 60px; /* shows approx 2 rows */
+    font-family: 'Roboto', sans-serif;
+}
+
+
+input[type="submit"] {
+    background-color: #F7BD03;
+    color: #000;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #e5a902;
+}
+
+input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+label {
+    font-weight: 500;
+    margin-top: 10px;
+    display: block;
+    text-align: left;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Error {
+    color: red;
+    font-size: 13px;
+    margin-left: 5%;
+    display: block;
+}
+
+.adh, .Dependent {
+    text-align: center;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #000080;
+    box-shadow: 0 0 5px rgba(0, 0, 128, 0.3);
+}
+
+
